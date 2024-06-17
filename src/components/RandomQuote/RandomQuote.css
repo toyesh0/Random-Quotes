@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 250px;
+    background: #625ac4;
+    max-width: 800px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.quote {
+    padding: 60px 110px;
+    color: black;
+    font-size: 32px;
+    text-align: center;
+}
+
+.line {
+    width: 680px;
+    height: 1.5px;
+    background-color: black;
+}
+
+.bottom {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+.author {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.icons {
+    cursor: pointer;
+    display: flex;
+    gap: 18px;
+}
+
+.toyesh {
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+@media only screen and (max-width: 786px) {
+ 
+    .quote {
+        padding: 40px 10px;
+    }
+    .bottom {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
