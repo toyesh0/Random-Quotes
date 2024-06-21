@@ -77,7 +77,7 @@ const RandomQuote = () => {
                     </div>
                 </div>
             </div>
-            <div className="toyesh">~ Mitushada pagal h mitushi toh fagall</div>
+            <div className="toyesh">~ toyesh</div>
         </body>
     );
 };
