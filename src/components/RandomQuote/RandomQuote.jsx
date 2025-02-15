@@ -4,7 +4,7 @@ import './RandomQuote.css';
 
 const RandomQuote = () => {
     const [quote, setQuote] = useState({
-        text: 'Difficulties increase the nearer we get to the goal',
+        quote: 'Difficulties increase the nearer we get to the goal',
         author: 'Johann Wolfgang von Goethe',
     });
     const [loading, setLoading] = useState(false); // State to track loading status
@@ -15,10 +15,11 @@ const RandomQuote = () => {
     const fetchRandomQuote = async () => {
         setLoading(true); // Set loading state to true
         try {
-            const response = await fetch('https://type.fit/api/quotes');
+            const response = await fetch('https://quotes-api-self.vercel.app/quote');
             const quotes = await response.json();
-            const selectedQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            setQuote(selectedQuote);
+            console.log("quotes: ", quotes);
+            // const selectedQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            setQuote(quotes);
             setBackgroundColor(getRandomColor()); // Set random background color
             setContainerBackgroundColor(getRandomColor());
         } catch (error) {
@@ -60,11 +61,11 @@ const RandomQuote = () => {
         <body style={{ backgroundColor }}>
             <div className='container' style={{ backgroundColor: containerBackgroundColor }}>
                 <div className="quote">
-                    {quote.text}
+                    {quote.quote}
                 </div>
                 <div className="line"></div>
                 <div className="bottom">
-                    <div className="author">- {quote.author.split(',')[0]}</div>
+                    <div className="author">- {quote.author}</div>
                     <div className="icons">
                         <RotateCcw
                             onClick={fetchRandomQuote}
